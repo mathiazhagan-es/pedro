@@ -1,0 +1,52 @@
+create new folder
+
+create tow new folders like front end and back end
+
+then do command on backend
+   npm init
+   npm i express cors nodemon mysql2 sequelize
+   npm i -g sequelize-cli
+   sequelize init  ## it will make qur SQL commands easier
+
+
+
+
+create a post.js file inside the models
+
+module.exports=(sequelize,DataType)=>{
+
+
+    const Posts=sequelize.define("Posts",{
+       title:{
+        type: DataType.STRING,
+        alloeNull:false
+       },
+       postText:{
+        type: DataType.STRING,
+        alloeNull:false
+       },
+       username:{
+        type: DataType.STRING,
+        alloeNull:false
+       }
+    })
+    return Posts
+}
+
+
+npm i bcrypt # for encryption
+
+npm i jsonwebtoken # for authentication
+
+
+const accesstoken=sign({key:value,key:value},"some text to verify")
+res.json(accesstoken)
+
+
+localStorage.setItem("accesstoken",res.data)
+
+{headers:{accesstoken:localStorage.getItem("accesstoken")}}
+
+const validtoken=verify(accesstoken,"some text to verify")
+
+
